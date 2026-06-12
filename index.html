@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마음 한 줄 | 필사와 명상을 위한 글귀 공간</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="영화, 드라마, 책, 명언 속 아름다운 글귀를 모아 공유하고 필사하며 마음을 차분히 가라앉히는 감성 공간입니다.">
+    <meta property="og:title" content="마음 한 줄 | 필사와 명상을 위한 글귀 공간">
+    <meta property="og:description" content="영화, 드라마, 책, 명언 속 아름다운 글귀를 모아 공유하고 필사하며 마음을 가라앉히는 공간">
+    <meta property="og:type" content="website">
+    
+    <!-- Link Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo" id="logoLink">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12.87 15.07L10.33 19H14.88L12.87 15.07M21 3H3C1.9 3 1 3.9 1 5V19C1 20.1 1.9 21 3 21H21C22.1 21 23 20.1 23 19V5C23 3.9 22.1 3 21 3M21 19H17.25L14.25 14H17.75L21 19M12.87 11.07L7.33 19H3L10.87 7.07L12.87 11.07M10.87 3H12.87L5.87 13.8L3.87 9.8L10.87 3Z"/>
+                </svg>
+                <span>마음 한 줄</span>
+            </a>
+            
+            <div class="header-actions">
+                <!-- Search Bar -->
+                <div class="search-wrapper">
+                    <svg class="search-icon" viewBox="0 0 24 24">
+                        <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                    </svg>
+                    <input type="text" class="search-input" id="searchInput" placeholder="출처나 글귀 검색...">
+                </div>
+                
+                <!-- Dark Mode Toggle -->
+                <button class="btn btn-icon" id="themeToggleBtn" title="화면 테마 변경">
+                    <!-- Sun Icon (Light Mode active) -->
+                    <svg class="sun-icon" viewBox="0 0 24 24">
+                        <path d="M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,2A1,1 0 0,1 13,3V5A1,1 0 0,1 11,5V3A1,1 0 0,1 12,2M12,19A1,1 0 0,1 13,20V22A1,1 0 0,1 11,22V20A1,1 0 0,1 12,19M2,12A1,1 0 0,1 3,11H5A1,1 0 0,1 5,13H3A1,1 0 0,1 2,12M19,12A1,1 0 0,1 20,11H22A1,1 0 0,1 22,13H20A1,1 0 0,1 19,12M6.34,5.66A1,1 0 0,1 7.76,5.66L9.17,7.07A1,1 0 0,1 7.76,8.49L6.34,7.07A1,1 0 0,1 6.34,5.66M14.83,14.17A1,1 0 0,1 16.24,14.17L17.66,15.59A1,1 0 0,1 16.24,17A1,1 0 0,1 14.83,15.59L14.83,14.17M5.66,17.66A1,1 0 0,1 5.66,16.24L7.07,14.83A1,1 0 0,1 8.49,16.24L7.07,17.66A1,1 0 0,1 5.66,17.66M14.17,7.76A1,1 0 0,1 15.59,6.34L17,7.76A1,1 0 0,1 15.59,9.17L14.17,7.76Z"/>
+                    </svg>
+                </button>
+                
+                <!-- Register Button -->
+                <button class="btn btn-primary btn-register-trigger" id="openRegisterModalBtn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/>
+                    </svg>
+                    <span>글귀 등록</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>마음을 채우는 한 줄</h1>
+            <p>바쁜 일상에서 벗어나, 아름다운 영화·드라마 대사, 도서 구절, 깊은 명언들을 가만히 읽고 손으로 정성스레 내려쓰며 복잡한 마음을 가지런히 정리해 보세요.</p>
+        </section>
+
+        <!-- Feed Controls -->
+        <section class="feed-controls">
+            <div class="tabs" id="genreTabs">
+                <button class="tab-btn active" data-genre="all">전체</button>
+                <button class="tab-btn" data-genre="movie">영화</button>
+                <button class="tab-btn" data-genre="drama">드라마</button>
+                <button class="tab-btn" data-genre="book">도서</button>
+                <button class="tab-btn" data-genre="lyrics">가사</button>
+                <button class="tab-btn" data-genre="quote">명언</button>
+            </div>
+            <div class="feed-actions">
+                <div class="feed-stats" id="feedStats">
+                    총 0개의 글귀가 있습니다.
+                </div>
+                <button class="btn btn-primary btn-register-trigger" id="feedRegisterBtn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/>
+                    </svg>
+                    <span>글귀 등록</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Quotes Grid -->
+        <section class="quotes-grid" id="quotesGrid">
+            <!-- Dynamically populated via app.js -->
+        </section>
+    </main>
+
+    <!-- Write Modal (Register Quote) -->
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-header-title-area">
+                    <h3 class="modal-title">마음을 울린 글귀 나누기</h3>
+                    <div class="wizard-progress">
+                        <span class="wizard-step-indicator" id="wizardStepIndicator">1단계 / 3단계</span>
+                        <div class="wizard-progress-bar-bg">
+                            <div class="wizard-progress-bar-fill" id="wizardProgressBarFill"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="close-btn" id="closeRegisterModalBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="quoteForm">
+                    <!-- Step 1: Category Selection -->
+                    <div class="wizard-step active" data-step="1">
+                        <div class="form-group">
+                            <label class="form-label">남기고 싶은 한 줄의 종류를 선택해 주세요</label>
+                            <div class="category-grid" id="categoryGrid">
+                                <div class="category-card selected" data-value="movie">
+                                    <span class="category-card-icon">🎬</span>
+                                    <span class="category-card-title">영화</span>
+                                    <span class="category-card-desc">기억하고 싶은 명대사</span>
+                                </div>
+                                <div class="category-card" data-value="drama">
+                                    <span class="category-card-icon">📺</span>
+                                    <span class="category-card-title">드라마</span>
+                                    <span class="category-card-desc">가슴 깊이 스민 대사</span>
+                                </div>
+                                <div class="category-card" data-value="book">
+                                    <span class="category-card-icon">📖</span>
+                                    <span class="category-card-title">도서</span>
+                                    <span class="category-card-desc">밑줄 긋고 싶은 구절</span>
+                                </div>
+                                <div class="category-card" data-value="lyrics">
+                                    <span class="category-card-icon">🎵</span>
+                                    <span class="category-card-title">가사</span>
+                                    <span class="category-card-desc">위로가 되는 노래 가사</span>
+                                </div>
+                                <div class="category-card" data-value="quote">
+                                    <span class="category-card-icon">✍️</span>
+                                    <span class="category-card-title">명언</span>
+                                    <span class="category-card-desc">마음을 정돈하는 명언</span>
+                                </div>
+                            </div>
+                            <input type="hidden" id="quoteCategory" value="movie">
+                        </div>
+                        <div class="form-footer">
+                            <button type="button" class="btn btn-secondary cancel-register-btn" style="background-color: var(--bg-secondary); color: var(--text-primary);">취소</button>
+                            <button type="button" class="btn btn-primary next-step-btn">다음</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Source & Author -->
+                    <div class="wizard-step" data-step="2">
+                        <div class="form-group">
+                            <label class="form-label" for="quoteSource">출처</label>
+                            <input type="text" id="quoteSource" class="form-input" placeholder="예: 어바웃 타임, 데미안, 밤편지 등" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="quoteAuthor">작성자 / 작가 / 아티스트 (선택)</label>
+                            <input type="text" id="quoteAuthor" class="form-input" placeholder="예: 헤르만 헤세, 아이유, 익명 등" autocomplete="off">
+                        </div>
+                        <div class="form-footer">
+                            <button type="button" class="btn btn-secondary prev-step-btn" style="background-color: var(--bg-secondary); color: var(--text-primary);">이전</button>
+                            <button type="button" class="btn btn-primary next-step-btn">다음</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Body -->
+                    <div class="wizard-step" data-step="3">
+                        <div class="form-group">
+                            <label class="form-label" for="quoteBody">글귀 내용</label>
+                            <textarea id="quoteBody" class="form-textarea" placeholder="여기에 마음에 드는 글귀를 입력해 주세요..." required maxlength="300"></textarea>
+                            <div class="char-count-wrapper">
+                                <span id="charCount">0</span> / 300자
+                            </div>
+                        </div>
+                        <div class="form-footer">
+                            <button type="button" class="btn btn-secondary prev-step-btn" style="background-color: var(--bg-secondary); color: var(--text-primary);">이전</button>
+                            <button type="submit" class="btn btn-primary" id="submitQuoteBtn">글귀 등록</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Success Completion -->
+                    <div class="wizard-step success-step" data-step="4">
+                        <div class="success-checkmark-wrapper">
+                            <div class="framer-checkmark-container">
+                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                                    <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h4 class="success-title">글귀가 따뜻하게 품어졌습니다.</h4>
+                        <p class="success-desc">차곡차곡 담긴 생각의 필사에서 만나요.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Focus Mode Overlay (Full screen) -->
+    <div class="focus-overlay" id="focusOverlay">
+        <!-- Focus Mode Header -->
+        <div class="focus-header">
+            <div class="focus-logo-area">
+                <button class="btn btn-icon" id="exitFocusBtn" title="필사 모드 나가기" style="border: 1px solid var(--border-color)">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20,11H7.83L13.42,5.41L12,4L4,12L12,20L13.41,18.59L7.83,13H20V11Z"/>
+                    </svg>
+                </button>
+                <span>필사 모드</span>
+                <span class="focus-category" id="focusCategoryBadge">도서</span>
+            </div>
+            
+            <!-- Shared buttons -->
+            <div class="header-actions">
+                <button class="btn" id="focusCopyBtn" style="background-color: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color);">
+                    <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 21,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"/>
+                    </svg>
+                    <span>본문 복사</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Focus Mode Body split container -->
+        <div class="focus-container">
+            <!-- Left: Text Viewer Sheet -->
+            <div class="focus-reader-section">
+                <!-- Toolbar for customizing sheet -->
+                <div class="reader-toolbar">
+                    <!-- Font Family -->
+                    <div class="toolbar-group">
+                        <span class="toolbar-label">글꼴</span>
+                        <button class="toolbar-btn active" id="fontMyeongjoBtn">명조</button>
+                        <button class="toolbar-btn" id="fontGothicBtn">고딕</button>
+                    </div>
+                    <!-- Font Size -->
+                    <div class="toolbar-group">
+                        <span class="toolbar-label">크기</span>
+                        <button class="toolbar-btn" id="fontSizeDecBtn">A-</button>
+                        <button class="toolbar-btn" id="fontSizeIncBtn">A+</button>
+                    </div>
+                    <!-- Paper Grid Style -->
+                    <div class="toolbar-group">
+                        <span class="toolbar-label">노트</span>
+                        <button class="toolbar-btn active" id="paperBlankBtn" title="무지">무지</button>
+                        <button class="toolbar-btn" id="paperLinedBtn" title="줄노트">줄</button>
+                        <button class="toolbar-btn" id="paperGridBtn" title="원고지 격자">격자</button>
+                    </div>
+                </div>
+
+                <!-- Paper Sheet Quote Display -->
+                <div class="quote-sheet-wrapper">
+                    <div class="quote-sheet sheet-blank font-myeongjo" id="quoteSheet">
+                        <div class="focus-quote-text" id="focusQuoteText">
+                            새는 알에서 나오려고 투쟁한다. 알은 세계다. 태어나려는 자는 하나의 세계를 깨뜨려야 한다.
+                        </div>
+                        <div class="focus-quote-meta" id="focusQuoteMeta">
+                            데미안 — 헤르만 헤세
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sound Panel for Ambient Audio -->
+                <div class="sound-panel">
+                    <button class="sound-btn" data-sound="none">
+                        <svg viewBox="0 0 24 24"><path d="M3.27,1.44L2,2.72L5.28,6H5V12H9L14,17V14.73L18.45,19.18C17.15,20.08 15.65,20.65 14,20.83V22.82C16.2,22.6 18.25,21.75 19.85,20.58L21.28,22L22.56,20.72L3.27,1.44M12,4L9.91,6.09L12,8.18V4M14,3.23V5.23C15.96,5.65 17.5,7 18.06,8.83L19.5,7.39C18.6,5.08 16.5,3.46 14,3.23M14,8V10.18L16.25,12.43C16.3,12.28 16.35,12.14 16.35,12C16.35,9.9 15.35,8.1 14,8Z"/></svg>
+                        소리 끔
+                    </button>
+                    <button class="sound-btn" data-sound="rain">
+                        <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 20A8 8 0 0 1 4 12A8 8 0 0 1 12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20M9 12A2 2 0 1 0 7 10A2 2 0 0 0 9 12M15 12A2 2 0 1 0 13 10A2 2 0 0 0 15 12M12 18A4 4 0 0 0 15.7 15.5H8.3A4 4 0 0 0 12 18Z" style="display:none;"/>
+                        <!-- Rain icon -->
+                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,6A4,4 0 0,1 16,10C16,12.2 12,17 12,17C12,17 8,12.2 8,10A4,4 0 0,1 12,6M12,8.2A1.8,1.8 0 0,0 10.2,10A1.8,1.8 0 0,0 12,11.8A1.8,1.8 0 0,0 13.8,10A1.8,1.8 0 0,0 12,8.2Z"/>
+                        </svg>
+                        빗소리
+                    </button>
+                    <button class="sound-btn" data-sound="waves">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,20C10.74,20 9.54,19.64 8.5,19L11.5,14L14.5,19C13.46,19.64 12.26,20 12,20M20.5,12C20.5,15.58 17.58,18.5 14,18.5C13.23,18.5 12.5,18.35 11.85,18.1L15.35,12.1H20.5M9.15,18.1C8.5,18.35 7.77,18.5 7,18.5C3.42,18.5 0.5,15.58 0.5,12H5.65L9.15,18.1M12,2C15.58,2 18.5,4.92 18.5,8.5H13.35L9.85,2.4C10.5,2.15 11.23,2 12,2M3.5,12C3.5,8.42 6.42,5.5 10,5.5C10.77,5.5 11.5,5.65 12.15,5.9L8.65,11.9H3.5M14.85,5.9C15.5,5.65 16.23,5.5 17,5.5C20.58,5.5 23.5,8.42 23.5,12H18.35L14.85,5.9Z" style="display:none;"/>
+                            <path d="M17,17A5,5 0 0,1 12,12A5,5 0 0,1 7,17C7,13 12,8 12,8C12,8 17,13 17,17Z" style="display:none;"/>
+                            <!-- Wave custom path -->
+                            <path d="M4.26,17.4C4.8,16.24 5.92,15.43 7.25,15.43C8.58,15.43 9.7,16.24 10.24,17.4C10.78,16.24 11.9,15.43 13.23,15.43C14.56,15.43 15.68,16.24 16.22,17.4C16.76,16.24 17.88,15.43 19.21,15.43C20.54,15.43 21.66,16.24 22.2,17.4H24V19H22.2C21.66,17.8 20.54,17 19.21,17C17.88,17 16.76,17.8 16.22,19H14.58C14.04,17.8 12.92,17 11.59,17C10.26,17 9.14,17.8 8.6,19H6.96C6.42,17.8 5.3,17 3.97,17C2.64,17 1.52,17.8 0.98,19H0V17.4H0.98C1.52,16.24 2.64,15.43 3.97,15.43C4.07,15.43 4.16,15.42 4.26,17.4M22.2,12.4H24V14H22.2C21.66,12.8 20.54,12 19.21,12C17.88,12 16.76,12.8 16.22,14H14.58C14.04,12.8 12.92,12 11.59,12C10.26,12 9.14,12.8 8.6,14H6.96C6.42,12.8 5.3,12 3.97,12C2.64,12 1.52,12.8 0.98,14H0V12.4H0.98C1.52,11.24 2.64,10.43 3.97,10.43C5.3,10.43 6.42,11.24 6.96,12.4H8.6C9.14,11.24 10.26,10.43 11.59,10.43C12.92,10.43 14.04,11.24 14.58,12.4H16.22C16.76,11.24 17.88,10.43 19.21,10.43C20.54,10.43 21.66,11.24 22.2,12.4M22.2,7.4H24V9H22.2C21.66,7.8 20.54,7 19.21,7C17.88,7 16.76,7.8 16.22,9H14.58C14.04,7.8 12.92,7 11.59,7C10.26,7 9.14,7.8 8.6,9H6.96C6.42,7.8 5.3,7 3.97,7C2.64,7 1.52,7.8 0.98,9H0V7.4H0.98C1.52,6.24 2.64,5.43 3.97,5.43C5.3,5.43 6.42,6.24 6.96,7.4H8.6C9.14,6.24 10.26,5.43 11.59,5.43C12.92,5.43 14.04,6.24 14.58,7.4H16.22C16.76,6.24 17.88,5.43 19.21,5.43C20.54,5.43 21.66,6.24 22.2,7.4Z"/>
+                        </svg>
+                        파도소리
+                    </button>
+                    <button class="sound-btn" data-sound="fire">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,18C10.34,18 9,16.66 9,15C9,13.9 9.6,12.94 10.5,12.44V10.5C10.5,10.22 10.72,10 11,10H13C13.28,10 13.5,10.22 13.5,10.5V12.44C14.4,12.94 15,13.9 15,15C15,16.66 13.66,18 12,18Z" style="display:none;"/>
+                            <!-- Fire custom path -->
+                            <path d="M17.55,11.2C17.47,10.87 17.21,10.6 16.89,10.48C16.57,10.37 16.21,10.42 15.94,10.63C15.06,11.3 14.15,11.83 13.2,12.2C13.06,11.09 12.39,10.12 11.43,9.62C12.91,7.83 13.11,5.32 11.9,3.31C11.72,3.03 11.39,2.87 11.06,2.9C10.72,2.94 10.43,3.16 10.32,3.48C9.5,5.8 8.69,7.63 7.8,8.96C6.73,8.08 5.37,7.6 3.97,7.63C3.63,7.64 3.33,7.86 3.22,8.18C3.1,8.5 3.2,8.87 3.47,9.08C5.3,10.48 6.42,12.63 6.42,14.9C6.42,17.94 8.89,20.4 11.93,20.4C14.97,20.4 17.43,17.94 17.43,14.9C17.43,13.59 17.48,12.33 17.55,11.2M11.93,18.4C10.27,18.4 8.93,17.06 8.93,15.4C8.93,14.3 9.53,13.34 10.43,12.84V10.9C10.43,10.62 10.65,10.4 10.93,10.4H12.93C13.21,10.4 13.43,10.62 13.43,10.9V12.84C14.33,13.34 14.93,14.3 14.93,15.4C14.93,17.06 13.59,18.4 11.93,18.4Z"/>
+                        </svg>
+                        모닥불
+                    </button>
+                    
+                    <div class="volume-wrapper">
+                        <svg class="volume-icon" viewBox="0 0 24 24"><path d="M14,3.23V5.23C16.81,5.67 19,8.11 19,11C19,13.89 16.81,16.33 14,16.77V18.77C17.89,18.31 21,15.02 21,11C21,6.98 17.89,3.69 14,3.23M16.5,11C16.5,9.28 15.5,7.8 14,7.1V14.9C15.5,14.2 16.5,12.72 16.5,11M3,9V13H7L12,18V4L7,9H3Z"/></svg>
+                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.5" title="볼륨 조절">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Interactive Digital Transcription Panel -->
+            <div class="focus-workspace-section" id="focusWorkspace">
+                <div class="workspace-header">
+                    <h3 class="workspace-title">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z"/>
+                        </svg>
+                        디지털 필사 연습장
+                    </h3>
+                    <p class="workspace-desc">제시된 문장을 키보드로 따라 써 보며 오롯이 문장에 집중하는 시간을 가집니다.</p>
+                </div>
+
+                <div class="typing-playground" id="typingPlayground">
+                    <!-- Realtime matching display -->
+                    <div class="text-comparer" id="textComparer">
+                        <!-- Characters will be loaded as spans dynamically -->
+                    </div>
+
+                    <!-- Input area -->
+                    <textarea class="typing-input" id="typingInput" placeholder="이곳을 클릭하고 위의 문장을 타이핑해 보세요..." autocomplete="off" spellcheck="false"></textarea>
+                    
+                    <!-- HUD (Stats & Progress bar) -->
+                    <div class="typing-stats">
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>필사 진척도</span>
+                                <span id="progressPercent">0%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" id="progressBarFill"></div>
+                            </div>
+                        </div>
+                        <div class="stats-score" id="matchRateScore">0% 일치</div>
+                    </div>
+                </div>
+
+                <!-- Completion message -->
+                <div class="typing-playground typing-success-msg" id="typingSuccessMsg">
+                    <svg class="success-icon" viewBox="0 0 24 24">
+                        <path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/>
+                    </svg>
+                    <h4 class="success-title">필사를 완료하셨습니다</h4>
+                    <p class="success-text">문장 하나하나 마음 깊이 새겨지셨기를 바랍니다. 차분하게 정돈된 온전한 하루를 응원합니다.</p>
+                    <button class="btn btn-primary" id="resetTypingBtn" style="margin-top: 1rem;">다시 필사하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast" id="toast">복사되었습니다.</div>
+
+    <!-- Application Script -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
